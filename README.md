@@ -1,14 +1,12 @@
-## 📦 Maven Project Setup
+📦 Maven Project: mavensample
+A simple Java application using Maven + Hibernate + MySQL to demonstrate ORM basics with a Student entity.
 
-**Project Name:** mavensample  
-**Description:** A simple Maven + Hibernate project with MySQL  
-**Group ID:** `org.sample`  
-**Artifact ID:** `mavensample`  
-**Java Version:** 8  
+🔧 pom.xml – Maven Configuration
+Configures project metadata, Java version, and dependencies for Hibernate, MySQL, and JUnit.
 
-### 🔧 `pom.xml` Configuration
-
-```xml
+xml
+Copy
+Edit
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -48,16 +46,12 @@
     </dependency>
   </dependencies>
 </project>
+🚀 App.java – Main Class
+Initializes the Hibernate session, creates a Student object, and saves it to the database.
 
-
-
-## 🚀 Java Main Class
-
-**File:** `App.java`  
-**Package:** `org.sample.mavensample`  
-**Purpose:** Initializes Hibernate and inserts a `Student` into the database
-
-```java
+java
+Copy
+Edit
 package org.sample.mavensample;
 
 import org.hibernate.Session;
@@ -65,14 +59,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class App
-{
-    public static void main(String[] args)
-    {
+public class App {
+    public static void main(String[] args) {
         System.out.println("Project started!");
 
         SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml") // Make sure file is in src/main/resources
+                .configure("hibernate.cfg.xml")
                 .buildSessionFactory();
 
         System.out.println(factory);
@@ -90,65 +82,37 @@ public class App
         factory.close();
     }
 }
+🧪 AppTest.java – Unit Test
+A basic JUnit test to ensure the application structure is working.
 
-
-
-
-## 🧪 Unit Test Class
-
-**File:** `AppTest.java`  
-**Package:** `org.sample.mavensample`  
-**Purpose:** Basic JUnit test to validate the application structure.
-
-```java
+java
+Copy
+Edit
 package org.sample.mavensample;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest(String testName)
-    {
+public class AppTest extends TestCase {
+    public AppTest(String testName) {
         super(testName);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
+    public static Test suite() {
         return new TestSuite(AppTest.class);
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
+    public void testApp() {
         assertTrue(true);
     }
 }
+⚙️ hibernate.cfg.xml – Hibernate Configuration
+Specifies the database connection, Hibernate dialect, and entity mapping.
 
-
-
-
-## ⚙️ Hibernate Configuration
-
-**File:** `hibernate.cfg.xml`  
-**Purpose:** Defines database connection, Hibernate properties, and entity mapping.
-
-```xml
+xml
+Copy
+Edit
 <?xml version="1.0" encoding="UTF-8"?>
 
 <hibernate-configuration>
@@ -166,14 +130,12 @@ public class AppTest
         <mapping class="org.sample.mavensample.Student"/>
     </session-factory>
 </hibernate-configuration>
+🧑‍🎓 Student.java – Entity Class
+A POJO mapped to the Student table using JPA annotations.
 
-
-## 🧑‍🎓 Student Entity Class
-
-**File:** `Student.java`  
-**Purpose:** A simple POJO annotated with `@Entity` to represent the `Student` table in the database.
-
-```java
+java
+Copy
+Edit
 package org.sample.mavensample;
 
 import javax.persistence.Entity;
@@ -225,6 +187,3 @@ public class Student {
         return id + " : " + name + " from " + city;
     }
 }
-
-
-
