@@ -48,7 +48,8 @@ A simple Java application using **Maven + Hibernate + MySQL** to demonstrate ORM
     </dependency>
   </dependencies>
 </project>
-xml```
+
+```xml
 
 
 # 🚀 **App.java – Main Class**
