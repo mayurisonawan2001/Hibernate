@@ -1,12 +1,14 @@
-📦 Maven Project: mavensample
-A simple Java application using Maven + Hibernate + MySQL to demonstrate ORM basics with a Student entity.
+# 📦 **Maven Project: `mavensample`**
 
-🔧 pom.xml – Maven Configuration
-Configures project metadata, Java version, and dependencies for Hibernate, MySQL, and JUnit.
+A simple Java application using **Maven + Hibernate + MySQL** to demonstrate ORM basics with a `Student` entity.
 
-xml
-Copy
-Edit
+---
+
+## 🔧 **`pom.xml` – Maven Configuration**
+
+**Purpose:** Configures project metadata, Java version, and dependencies for Hibernate, MySQL, and JUnit.
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -46,6 +48,7 @@ Edit
     </dependency>
   </dependencies>
 </project>
+
 🚀 App.java – Main Class
 Initializes the Hibernate session, creates a Student object, and saves it to the database.
 
