@@ -48,15 +48,12 @@ A simple Java application using **Maven + Hibernate + MySQL** to demonstrate ORM
     </dependency>
   </dependencies>
 </project>
-
 xml'''
+
 
 # 🚀 **App.java – Main Class**
 **Initializes the Hibernate session, creates a Student object, and saves it to the database.**
 
-java
-Copy
-Edit
 package org.sample.mavensample;
 
 import org.hibernate.Session;
